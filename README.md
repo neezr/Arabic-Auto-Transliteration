@@ -2,7 +2,7 @@
 
 An online tool for converting between different transliterations of Arabic.
 
-[View as GitHub Page](https://neezr.github.io/arabic-auto-transliteration)
+[View as GitHub Page](https://neezr.github.io/Arabic-Auto-Transliteration/)
 
 ## Currently supports:
 - Arabic Script
