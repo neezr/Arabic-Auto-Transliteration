@@ -4,7 +4,7 @@ An online tool for converting between different transliterations of Arabic.
 
 [View as GitHub Page](https://neezr.github.io/arabic-auto-transliteration)
 
-##Currently supports:
+## Currently supports:
 - Arabic Script
 - DMG-Transliteration (DIN 31635 standard)
 - Encyclopedia of Islam-Transliteration (EI-Transliteration)
