@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Arabic Auto Transliteration</title>
+		<!-- styles -->
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<h1>Arabic Auto Transliteration</h1>
+		<select id="select_from_encoding">
+			<option value="ARB" selected>Arabic Script</option>
+			<option value="DMG">DMG Transliteration</option>
+			<option value="BWT">Buckwalter Transliteration</option>
+			<option value="EIS">Encyclopedia of Islam Transliteration</option>
+		</select><br>
+		<input type="text" id="field_input" name="field_input" placeholder="Type here..."><br><br>
+		<select id="select_to_encoding">
+			<option value="ARB">Arabic Script</option>
+			<option value="DMG" selected>DMG Transliteration</option>
+			<option value="BWT">Buckwalter Transliteration</option>
+			<option value="EIS">Encyclopedia of Islam Transliteration</option>
+		</select><br>
+		<input type="text" id="field_output" disabled name="field_output"><br><br>
+		<input type="submit" id="btn_convert" value="Convert">
+		<input type="submit" id="btn_copy" value="Copy to Clipboard">
+		<!-- js -->
+		<script src="app.js"></script>
+	</body>
+</html>

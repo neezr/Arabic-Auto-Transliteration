@@ -1,0 +1,17 @@
+﻿h1 {
+  font-size: 25px;
+}
+
+body {
+	background-color: #011201;
+	color: #fafffa;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 1em;
+	zoom:175%;
+	-moz-transform: scale(1.75); /* firefox*/
+}
+
+input[type="text"]{
+	width: 232px;
+}
