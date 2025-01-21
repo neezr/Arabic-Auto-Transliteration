@@ -91,6 +91,7 @@ const convertToBuckwalter = function(input_txt, from_encoding){
 }
 
 const convertFromBuckwalter = function(input_txt, to_encoding){
+	input_txt = input_txt.replaceAll("al~Ah", "Allh")
 	switch(to_encoding){
 		case "ARB":
 			var output_text = [];
@@ -126,7 +127,7 @@ const convertFromBuckwalter = function(input_txt, to_encoding){
 					output_text.push(transliterationTableBWTtoDMG[ch] || ch);
 				}
 			}
-			return output_text.join("");
+			return output_text.join("").replaceAll("al-lh", "allāh");
 			break;
 		case "BWT":
 			return input_txt;
@@ -147,7 +148,7 @@ const convertFromBuckwalter = function(input_txt, to_encoding){
 					output_text.push(transliterationTableBWTtoEIS[ch] || ch);
 				}
 			}
-			return output_text.join("");
+			return output_text.join("").replaceAll("al-lh", "allāh");
 			break;
 	}
 	return input_txt; // fail safe
