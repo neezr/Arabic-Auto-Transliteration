@@ -1,5 +1,5 @@
-﻿h1 {
-  font-size: 25px;
+h1 {
+	font-size: 25px;
 }
 
 body {
@@ -14,4 +14,8 @@ body {
 
 input[type="text"]{
 	width: 232px;
+}
+
+p{
+	font-size: 10px;
 }
