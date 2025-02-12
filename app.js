@@ -91,7 +91,7 @@ const convertToBuckwalter = function(input_txt, from_encoding){
 }
 
 const convertFromBuckwalter = function(input_txt, to_encoding){
-	input_txt = input_txt.replaceAll("al~Ah", "Allh")
+	input_txt = input_txt.replaceAll("al~Ah", "Allh");
 	switch(to_encoding){
 		case "ARB":
 			var output_text = [];
@@ -112,6 +112,7 @@ const convertFromBuckwalter = function(input_txt, to_encoding){
 			return output_text.join("");
 			break;
 		case "DMG":
+			input_txt = input_txt.replaceAll("o", "");
 			var output_text = [""];
 			for (const idx in input_txt){
 				var ch = input_txt[idx];
@@ -133,6 +134,7 @@ const convertFromBuckwalter = function(input_txt, to_encoding){
 			return input_txt;
 			break;
 		case "EIS":
+			input_txt = input_txt.replaceAll("o", "");
 			var output_text = [""];
 			for (const idx in input_txt){
 				var ch = input_txt[idx];
