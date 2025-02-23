@@ -178,3 +178,9 @@ btn_copy.addEventListener('click', function(){
 		btn_copy.value = "Copy to Clipboard";
 	}, 1000);
 })
+
+field_input.addEventListener("keypress", function(event){
+	if (event.key == "Enter"){
+		btn_convert.click();
+	}
+})
