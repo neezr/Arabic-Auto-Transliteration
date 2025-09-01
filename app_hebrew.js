@@ -66,7 +66,6 @@ const transliterationTableHEBtoISO = {
 "\u05b1":"e"
 };
 
-//const transliterationTableISOtoHEB = swap_keys_and_values(transliterationTableHEBtoISO); // TODO schreiben statt methode
 const transliterationTableISOtoHEB = {
 "ʾ":"א",
 "b":"ב",
