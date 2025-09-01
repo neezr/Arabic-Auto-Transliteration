@@ -1,21 +1,112 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
 h1 {
-	font-size: 25px;
+    font-size: 2.5rem;
+    color: #023b04;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
-body {
-	background-color: #011201;
-	color: #fafffa;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 1em;
-	zoom:175%;
-	-moz-transform: scale(1.75); /* firefox*/
+
+p {
+	font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0 20px 0;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
 }
 
-input[type="text"]{
-	width: 232px;
+
+input[type="text"] {
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
-p{
-	font-size: 10px;
+input[type="text"]:focus {
+    border-color: #1a3554;
+    outline: none;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+}
+
+input[type="text"]:hover {
+    border-color: #777;
+}
+
+input[type="text"]:disabled {
+  background-color: #f0f0f0;
+  color: #5c5c5c;
+  border: 1px solid #ccc;
+}
+
+
+input[type="submit"] {
+    background-color: #4A90E2;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+}
+
+input[type="submit"]:active {
+    background-color: #3A80B2;
+    transform: translateY(0);
+}
+
+
+
+select {
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+
+select:focus {
+    border-color: #4A90E2;
+    outline: none;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
 }
