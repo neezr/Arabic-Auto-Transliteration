@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hebrew Auto Transliteration</title>
+		<!-- styles -->
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<h1>Hebrew Auto Transliteration</h1>
+		<p><i>(Beta version)</i><br></p><br>
+		<select id="select_from_encoding">
+			<option value="HEB" selected>Hebrew Script</option>
+			<option value="ISO">ISO-259 Transliteration</option>
+		</select>
+		<input type="text" id="field_input" name="field_input" placeholder="Type here..."><br><br>
+		<select id="select_to_encoding">
+			<option value="HEB">Hebrew Script</option>
+			<option value="ISO" selected>ISO-259 Transliteration</option>
+		</select>
+		<input type="text" id="field_output" disabled name="field_output"><br><br>
+		<input type="submit" id="btn_convert" value="Convert">
+		<input type="submit" id="btn_copy" value="Copy to Clipboard"><br><br><br>
+		<p>See also: <a href="index.html">Arabic Auto Transliteration</a></p><br>
+		<p><b>Note:</b> The common transliteration standards are lossy, so automatic transliteration will never be perfect.<br>Use this as a tool to speed up your workflow, not as a replacement for a language expert.</p>
+		<!-- js -->
+		<script src="app_hebrew.js"></script>
+	</body>
+</html>
