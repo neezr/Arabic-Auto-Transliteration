@@ -166,6 +166,9 @@ const convert = function(input_txt, from_encoding, to_encoding){
 btn_convert.addEventListener('click', function(){
 	var from_encoding = select_from_encoding.value;
 	var to_encoding = select_to_encoding.value;
+
+	field_input.dir = from_encoding == "ARB" ? "rtl" : "ltr";
+	field_output.dir = to_encoding == "ARB" ? "rtl" : "ltr";
 	
 	field_output.value = convert(field_input.value, from_encoding, to_encoding);
 })
