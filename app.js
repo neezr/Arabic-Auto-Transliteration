@@ -5,7 +5,7 @@ const btn_copy = document.getElementById("btn_copy");
 const select_from_encoding = document.getElementById("select_from_encoding");
 const select_to_encoding = document.getElementById("select_to_encoding");
 
-const swap_keys_and_values = function(dictObj){
+function swap_keys_and_values(dictObj){
 	var res = {};
 	for(var k in dictObj){
 		res[dictObj[k]] = k;
@@ -24,7 +24,7 @@ const transliterationTableDMGtoBWT = {"ā": "A", "b": "b", "t": "t", "ṯ":"v", 
 const transliterationTableBWTtoEIS = {"A": "ā", "b": "b", "t": "t", "v": "th", "j": "dj", "H": "ḥ", "x": "kh", "d": "d", "*": "dh", "r": "r", "z": "z", "s": "s", "$": "sh", "S": "ṣ", "D": "ḍ", "T": "ṭ", "Z": "ẓ", "E": "ʿ", "g": "gh", "f": "f", "q": "ḳ", "k": "k", "l": "l", "m": "m", "n": "n", "h": "h", "w": "w", "y": "y", "Y": "ā", "'": "ʾ", ">": "ʾa", "<": "ʾi", "&": "ʾu", "}": "īʾ", "|": "ʾā", "{": "a", "`": "ā", "a": "a", "u": "u", "i": "i", "F": "an", "N": "un", "K": "in", "~": "~", "o": "", "p": "a", "_": "_"};
 
 
-const convertToBuckwalter = function(input_txt, from_encoding){
+function convertToBuckwalter(input_txt, from_encoding){
 	switch(from_encoding){
 		case "ARB":
 			var output_text = [];
@@ -90,7 +90,7 @@ const convertToBuckwalter = function(input_txt, from_encoding){
 	return input_txt; // fail safe
 }
 
-const convertFromBuckwalter = function(input_txt, to_encoding){
+function convertFromBuckwalter(input_txt, to_encoding){
 	input_txt = input_txt.replaceAll("al~Ah", "Allh");
 	switch(to_encoding){
 		case "ARB":
@@ -156,14 +156,14 @@ const convertFromBuckwalter = function(input_txt, to_encoding){
 	return input_txt; // fail safe
 }
 
-const convert = function(input_txt, from_encoding, to_encoding){
+function convert(input_txt, from_encoding, to_encoding){
 	input_txt = convertToBuckwalter(input_txt, from_encoding);
 	input_txt = convertFromBuckwalter(input_txt, to_encoding);
 	return input_txt;
 }
 
 
-btn_convert.addEventListener('click', function(){
+function updateAllFields(){
 	var from_encoding = select_from_encoding.value;
 	var to_encoding = select_to_encoding.value;
 
@@ -171,9 +171,14 @@ btn_convert.addEventListener('click', function(){
 	field_output.dir = to_encoding == "ARB" ? "rtl" : "ltr";
 	
 	field_output.value = convert(field_input.value, from_encoding, to_encoding);
-})
+}
 
-btn_copy.addEventListener('click', function(){
+field_input.addEventListener("change", updateAllFields);
+select_from_encoding.addEventListener("change", updateAllFields);
+select_to_encoding.addEventListener("change", updateAllFields);
+btn_convert.addEventListener("click", updateAllFields);
+
+btn_copy.addEventListener("click", function(){
 	var copiedText = field_output.value;
 	navigator.clipboard.writeText(copiedText);
 	btn_copy.value = "Copied!";

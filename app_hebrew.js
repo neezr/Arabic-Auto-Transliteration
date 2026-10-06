@@ -5,7 +5,7 @@ const btn_copy = document.getElementById("btn_copy");
 const select_from_encoding = document.getElementById("select_from_encoding");
 const select_to_encoding = document.getElementById("select_to_encoding");
 
-const swap_keys_and_values = function(dictObj){
+function swap_keys_and_values(dictObj){
 	var res = {};
 	for(var k in dictObj){
 		res[dictObj[k]] = k;
@@ -108,7 +108,7 @@ const transliterationTableISOtoHEB = {
 };
 
 
-const convertToHebrew = function(input_txt, from_encoding){
+function convertToHebrew(input_txt, from_encoding){
 	switch(from_encoding){
 		case "ISO":
 			var output_text = [];
@@ -126,7 +126,7 @@ const convertToHebrew = function(input_txt, from_encoding){
 	return input_txt; // fail safe
 }
 
-const convertFromHebrew = function(input_txt, to_encoding){
+function convertFromHebrew(input_txt, to_encoding){
 	switch(to_encoding){
 		case "ISO":
 			var output_text = [];
@@ -144,14 +144,14 @@ const convertFromHebrew = function(input_txt, to_encoding){
 	return input_txt; // fail safe
 }
 
-const convert = function(input_txt, from_encoding, to_encoding){
+function convert(input_txt, from_encoding, to_encoding){
 	input_txt = convertToHebrew(input_txt, from_encoding);
 	input_txt = convertFromHebrew(input_txt, to_encoding);
 	return input_txt;
 }
 
 
-btn_convert.addEventListener('click', function(){
+function updateAllFields(){
 	var from_encoding = select_from_encoding.value;
 	var to_encoding = select_to_encoding.value;
 
@@ -159,9 +159,14 @@ btn_convert.addEventListener('click', function(){
 	field_output.dir = to_encoding == "HEB" ? "rtl" : "ltr";
 	
 	field_output.value = convert(field_input.value, from_encoding, to_encoding);
-})
+}
 
-btn_copy.addEventListener('click', function(){
+field_input.addEventListener("change", updateAllFields);
+select_from_encoding.addEventListener("change", updateAllFields);
+select_to_encoding.addEventListener("change", updateAllFields);
+btn_convert.addEventListener("click", updateAllFields);
+
+btn_copy.addEventListener("click", function(){
 	var copiedText = field_output.value;
 	navigator.clipboard.writeText(copiedText);
 	btn_copy.value = "Copied!";
